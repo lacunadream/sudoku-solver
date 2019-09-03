@@ -1,4 +1,4 @@
-import { logger } from "ms-logging";
+import { logger } from 'ms-logging';
 
 export default class Sudoku {
   constructor() {
@@ -27,7 +27,8 @@ export default class Sudoku {
     if (xx === 8 && yy === 8) {
       xx = 0;
       yy = 0;
-    } else if (xx === 8) { // bump down
+    } else if (xx === 8) {
+      // bump down
       xx = 0;
       yy += 1;
     } else {
@@ -36,7 +37,7 @@ export default class Sudoku {
     return {
       x: xx,
       y: yy,
-    }
+    };
   }
 
   getNextValue(x, y) {
@@ -46,16 +47,16 @@ export default class Sudoku {
 
   getHorizontalValues(x, y) {
     const values = this._matrix[y];
-    return values.filter(v => v !== undefined);
+    return values.filter((v) => v !== undefined);
   }
 
   getVerticalValues(x, y) {
     const values = [];
     for (let i = 0; i <= 8; i++) {
       values.push(this.getValue(x, i));
-    }    
-    return values.filter(v => v !== undefined);
-  }  
+    }
+    return values.filter((v) => v !== undefined);
+  }
 
   getSquareValues(x, y) {
     const getBounds = (coordinate) => {
@@ -73,24 +74,24 @@ export default class Sudoku {
       return {
         LB,
         UB,
-      }
-    }
+      };
+    };
     const { LB: xLB, UB: xUB } = getBounds(x);
     const { LB: yLB, UB: yUB } = getBounds(y);
 
     const values = [];
-    for (let i = xLB; i <= xUB; i++ ) {
+    for (let i = xLB; i <= xUB; i++) {
       for (let ii = yLB; ii <= yUB; ii++) {
         values.push(this.getValue(i, ii));
       }
     }
-    return values.filter(v => v !== undefined);
-  }    
+    return values.filter((v) => v !== undefined);
+  }
 
   countTotalFilled() {
     let countHolder = 0;
     for (let i = 0; i < 9; i++) {
-      const count = this._matrix[i].filter(v => v !== undefined).length;
+      const count = this._matrix[i].filter((v) => v !== undefined).length;
       countHolder += count;
     }
     return countHolder;
@@ -101,15 +102,23 @@ export default class Sudoku {
   }
 
   ppV(x, y) {
-    return (this.getValue(x, y) || ' ');
+    return this.getValue(x, y) || ' ';
   }
 
   prettyPrintRow(y) {
-    console.log(`| ${this.ppV(0, y)} ${this.ppV(1, y)} ${this.ppV(2, y)} | ${this.ppV(3, y)} ${this.ppV(4, y)} ${this.ppV(5, y)} | ${this.ppV(6, y)} ${this.ppV(7, y)} ${this.ppV(8, y)} |`);
+    console.log(
+      `| ${this.ppV(0, y)} ${this.ppV(1, y)} ${this.ppV(2, y)} | ${this.ppV(
+        3,
+        y,
+      )} ${this.ppV(4, y)} ${this.ppV(5, y)} | ${this.ppV(6, y)} ${this.ppV(
+        7,
+        y,
+      )} ${this.ppV(8, y)} |`,
+    );
   }
 
   prettyPrintVerticalShell() {
-    console.log('—————————————————————————')
+    console.log('—————————————————————————');
   }
 
   prettyPrint() {
