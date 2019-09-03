@@ -16,19 +16,7 @@ Fill up the existing values in `solver.js` and run `npm start`.
 
 ### Grid:
 
-Uses {x, y} notation:
-x
-0 1 2 3 4 5 6 7 8
-— — — — — — — — — — —
-0|
-1|
-2|
-y 3|
-4|
-5|
-6|
-7|
-8|
+Uses `{x, y}` notation, where `x` is the horizontal row while `y` is the vertical column
 
 ### Enhancements:
 
