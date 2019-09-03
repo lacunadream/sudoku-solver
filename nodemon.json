@@ -1,0 +1,16 @@
+{
+  "ignore": [
+    ".git",
+    "node_modules/**/node_modules",
+    "test",
+    "log",
+    "xml",
+    "dist/*",
+    "lib/**/*.test.js"
+  ],
+  "verbose": false,
+  "execMap": {
+    "js": "node "
+  },
+  "ext": "js json yml babelrc"
+}

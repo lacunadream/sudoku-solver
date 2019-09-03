@@ -1,0 +1,43 @@
+{
+  "name": "s-solver",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon --exec \"npx babel-node\" solver.js",
+    "test": "cross-env NODE_ENV=test mocha --timeout 5000 --require babel-core/register \"./*.test.js\" --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lacunadream/s-solver.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lacunadream/s-solver/issues"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.0.2",
+    "chai": "^4.2.0",
+    "chai-as-promised": "^7.1.1",
+    "cross-env": "^5.2.0",
+    "eslint": "^6.0.1",
+    "eslint-config-airbnb": "^17.1.1",
+    "eslint-plugin-import": "^2.18.0",
+    "eslint-plugin-jsx-a11y": "^6.2.3",
+    "eslint-plugin-react": "^7.14.2",
+    "husky": "^3.0.0",
+    "mocha": "^6.1.4",
+    "prettier": "^1.18.2",
+    "pretty-quick": "^1.11.1",
+    "sinon": "^7.3.2"
+  },
+  "dependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-plugin-transform-object-rest-spread": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "date-fns": "^1.30.1",
+    "ms-logging": "git+https://git@github.com/lacunadream/ms-logging.git#master"
+  },
+  "homepage": "https://github.com/lacunadream/s-solver#readme"
+}
